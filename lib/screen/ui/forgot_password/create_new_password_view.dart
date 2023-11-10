@@ -44,6 +44,7 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
+
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
@@ -62,9 +63,8 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const SizedBox(
-                              height: 40,
-                            ),
+                         
+                           
                             const SizedBox(
                               height: 50,
                             ),
@@ -81,6 +81,7 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
                             const SizedBox(
                               height: 8,
                             ),
+                             Text('Please enter and confirm your new password. You will need to login after you reset.' , textAlign: TextAlign.center, style:Theme.of(context).textTheme.bodySmall ,),
                             const SizedBox(
                               height: 48,
                             ),
@@ -153,32 +154,7 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
                             const SizedBox(
                               height: 10,
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                InkWell(
-                                  onTap: () {
-                                    // Navigator.push(
-                                    //     context,
-                                    //     MaterialPageRoute(
-                                    //         builder: (context) =>
-                                    //             const BvnWidget()));
-                                  },
-                                  child: RichText(
-                                      textAlign: TextAlign.center,
-                                      text: TextSpan(
-                                        children: <TextSpan>[
-                                          TextSpan(
-                                            text: 'Don’t have account? ',
-                                          ),
-                                          TextSpan(
-                                            text: 'Sign Up',
-                                          ),
-                                        ],
-                                      )),
-                                ),
-                              ],
-                            ),
+                        
                           ],
                         ),
                       ),

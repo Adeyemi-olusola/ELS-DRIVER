@@ -1,7 +1,10 @@
+import 'package:ets_rider/screen/ui/bookings/bookings_view.dart';
 import 'package:ets_rider/screen/ui/forgot_password/create_new_password_view.dart';
 import 'package:ets_rider/screen/ui/forgot_password/forgot_password_otp_view.dart';
 import 'package:ets_rider/screen/ui/forgot_password/forgot_password_view.dart';
 import 'package:ets_rider/screen/ui/login/login_view.dart';
+import 'package:ets_rider/screen/ui/notification/notification_view.dart';
+import 'package:ets_rider/screen/ui/special_offers/special_offers_view.dart';
 import 'package:ets_rider/utils/theme_manager.dart';
 import 'package:ets_rider/utils/themes.dart';
 import 'package:flutter/material.dart';
@@ -19,10 +22,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: defaultTheme,
-      themeMode:  _themeManager.themeMode,
-      home: CreateNewPasswordView()
-    );
+        title: 'Flutter Demo',
+        theme: defaultTheme,
+        themeMode: _themeManager.themeMode,
+        home: BookingView());
   }
 }
