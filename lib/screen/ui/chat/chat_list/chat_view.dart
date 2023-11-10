@@ -1,4 +1,4 @@
-import 'package:ets_rider/screen/ui/chat/chat_view_model.dart';
+import 'package:ets_rider/screen/ui/chat/chat_list/chat_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 

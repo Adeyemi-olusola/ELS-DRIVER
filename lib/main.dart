@@ -1,7 +1,9 @@
 import 'package:ets_rider/screen/ui/bookings/bookings_view.dart';
+import 'package:ets_rider/screen/ui/chat/chat_detail.dart/chat_detail_view.dart';
 import 'package:ets_rider/screen/ui/forgot_password/create_new_password_view.dart';
 import 'package:ets_rider/screen/ui/forgot_password/forgot_password_otp_view.dart';
 import 'package:ets_rider/screen/ui/forgot_password/forgot_password_view.dart';
+import 'package:ets_rider/screen/ui/inbox/inbox_view.dart';
 import 'package:ets_rider/screen/ui/login/login_view.dart';
 import 'package:ets_rider/screen/ui/notification/notification_view.dart';
 import 'package:ets_rider/screen/ui/special_offers/special_offers_view.dart';
@@ -25,6 +27,6 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: defaultTheme,
         themeMode: _themeManager.themeMode,
-        home: BookingView());
+        home: ChatScreen());
   }
 }
