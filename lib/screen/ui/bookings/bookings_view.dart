@@ -1,5 +1,6 @@
 import 'package:ets_rider/screen/ui/bookings/active_booking/active_booking_view.dart';
 import 'package:ets_rider/screen/ui/bookings/bookings_viewModel.dart';
+import 'package:ets_rider/screen/ui/chat/chat_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -48,7 +49,7 @@ class _BookingViewState extends State<BookingView> {
               ),
               body: TabBarView(
                 children: [
-                  ActiveBookingView(),
+                  ChatsView(),
                   ActiveBookingView(),
                   ActiveBookingView()
                 ],
