@@ -1,5 +1,6 @@
 import 'package:ets_rider/screen/ui/bookings/active_booking/active_booking_view_model.dart';
 import 'package:ets_rider/screen/widgets/button/button.dart';
+import 'package:ets_rider/screen/widgets/timeline/timeline_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'dart:math' as math;
@@ -109,9 +110,7 @@ class _ActiveBookingViewState extends State<ActiveBookingView> {
                                                                   Colors.white,
                                                               fontSize: 12))
                                                 ],
-                                              )
-
-                                              ,
+                                              ),
                                             ],
                                           ),
                                         )
@@ -185,18 +184,55 @@ class _ActiveBookingViewState extends State<ActiveBookingView> {
                                         )
                                       ],
                                     ),
-                                    SizedBox(height: 10,),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text('Date & Time' , style: Theme.of(context).textTheme.bodySmall,),
-                                        Text('Date & Time',style: Theme.of(context).textTheme.bodySmall)
+                                        Text(
+                                          'Date & Time',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall,
+                                        ),
+                                        Text('Date & Time',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall)
                                       ],
-                                    )
-                                    ,
-                                    SizedBox(height: 20,),
-
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Container(
+                                      margin:
+                                          EdgeInsets.symmetric(vertical: 20.0),
+                                      height: 200.0,
+                                      child: ListView(
+                                        scrollDirection: Axis.vertical,
+                                        children: <Widget>[
+                                          TimelineItem(
+                                            title: 'Pickup',
+                                            subTitle: 'From: 123 Main St',
+                                            time: '10:00 AM',
+                                            icon: Icons.store,
+                                            isFirst: true,
+                                          ),
+                                          TimelineItem(
+                                            title: 'Delivery',
+                                            subTitle: 'To: 456 Oak St',
+                                            time: '2:00 PM',
+                                            icon: Icons.location_on,
+                                            isLast: true,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
                                     MyButton(text: 'Track Driver')
                                   ],
                                 ),

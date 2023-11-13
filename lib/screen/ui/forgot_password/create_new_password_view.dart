@@ -1,4 +1,5 @@
 import 'package:ets_rider/screen/widgets/button/button.dart';
+import 'package:ets_rider/screen/widgets/dialog/dialog.dart';
 import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,8 +35,8 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
 
   DateTime? currentBackPressTime;
   Future<bool> _onWillPop() async {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const CreateNewPasswordView()));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const CreateNewPasswordView()));
     return false;
   }
 
@@ -44,7 +45,6 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
-
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
@@ -63,8 +63,6 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                         
-                           
                             const SizedBox(
                               height: 50,
                             ),
@@ -81,13 +79,30 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
                             const SizedBox(
                               height: 8,
                             ),
-                             Text('Please enter and confirm your new password. You will need to login after you reset.' , textAlign: TextAlign.center, style:Theme.of(context).textTheme.bodySmall ,),
+                            Text(
+                              'Please enter and confirm your new password. You will need to login after you reset.',
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
                             const SizedBox(
                               height: 48,
                             ),
                             InlineInput(
                               controller: emailController,
                               label: 'Password',
+                              suffixWidget: InkWell(
+                                onTap: () => setState(
+                                  () => staffLoginPasswordVisibility =
+                                      !staffLoginPasswordVisibility,
+                                ),
+                                child: Icon(
+                                  staffLoginPasswordVisibility
+                                      ? Icons.visibility_outlined
+                                      : Icons.visibility_off_outlined,
+                                  color: Theme.of(context).primaryColor,
+                                  size: 22,
+                                ),
+                              ),
                             ),
                             const SizedBox(
                               height: 30,
@@ -111,7 +126,7 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
                                   staffLoginPasswordVisibility
                                       ? Icons.visibility_outlined
                                       : Icons.visibility_off_outlined,
-                                  //color: themeData.iconColor,
+                                  color: Theme.of(context).primaryColor,
                                   size: 22,
                                 ),
                               ),
@@ -119,7 +134,6 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
                             const SizedBox(
                               height: 10,
                             ),
-                        
                             const SizedBox(
                               height: 30,
                             ),
@@ -128,25 +142,7 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
                                 MyButton(
                                   text: 'Reset Password',
                                   onPressed: () async {
-                                    // if (!_formKey.currentState!.validate()) {
-                                    // } else {
-                                    //   var body = {
-                                    //     'identifier': emailController.text,
-                                    //     'password': passwordController.text,
-                                    //     'location': Provider.of<AuthState>(
-                                    //             context,
-                                    //             listen: false)
-                                    //         .userLocation,
-
-                                    //     // 'location': '-122.084, 37.4219983',
-                                    //     'device_id':
-                                    //         // 'mobile'
-                                    //         Provider.of<AuthState>(context,
-                                    //                 listen: false)
-                                    //             .userDeviceId
-                                    //   };
-                                    //   print(body);
-                                    //   AuthService().login(context, body);
+                                    DialogBox().sshowDialog(context);
                                   },
                                 ),
                               ],
@@ -154,7 +150,6 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
                             const SizedBox(
                               height: 10,
                             ),
-                        
                           ],
                         ),
                       ),

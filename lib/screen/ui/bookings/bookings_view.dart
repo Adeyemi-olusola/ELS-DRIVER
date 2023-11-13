@@ -50,7 +50,7 @@ class _BookingViewState extends State<BookingView> {
               ),
               body: TabBarView(
                 children: [
-                  ChatsView(),
+                  ActiveBookingView(),
                   CallListView(),
                   ActiveBookingView()
                 ],

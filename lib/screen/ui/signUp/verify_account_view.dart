@@ -1,5 +1,5 @@
-import 'package:ets_rider/screen/ui/forgot_password/create_new_password_view.dart';
 import 'package:ets_rider/screen/ui/forgot_password/forgot_password_view_model.dart';
+import 'package:ets_rider/screen/ui/signUp/upload_picture_view.dart';
 import 'package:ets_rider/screen/widgets/button/button.dart';
 import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
@@ -9,21 +9,21 @@ import 'package:stacked/stacked.dart';
 
 //import 'package:truman_staff/utils/tools.dart' as tools;
 
-class FogotPasswordOtpView extends StatefulWidget {
-  const FogotPasswordOtpView({
+class RegistrationOtpView extends StatefulWidget {
+  const RegistrationOtpView({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<FogotPasswordOtpView> createState() => _FogotPasswordOtpViewState();
+  State<RegistrationOtpView> createState() => _RegistrationOtpViewState();
 }
 
-class _FogotPasswordOtpViewState extends State<FogotPasswordOtpView> {
-  late TextEditingController emailController;
+class _RegistrationOtpViewState extends State<RegistrationOtpView> {
+  late TextEditingController codeController;
   late TextEditingController passwordController;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  bool FogotPasswordOtpViewPasswordVisibility = false;
+  bool RegistrationOtpViewPasswordVisibility = false;
 
   bool staffLoginPasswordVisibility = false;
 
@@ -32,9 +32,8 @@ class _FogotPasswordOtpViewState extends State<FogotPasswordOtpView> {
     super.initState();
     ForgotPasswordModelView().startTime();
 
-    emailController = TextEditingController();
-    passwordController = TextEditingController();
-    emailController = TextEditingController(); //..text = 'admin@mail.com';
+    codeController = TextEditingController(
+        text: '4 digit code'); //..text = 'admin@mail.com';
     passwordController = TextEditingController(); //..text = 'password';
   }
 
@@ -80,18 +79,33 @@ class _FogotPasswordOtpViewState extends State<FogotPasswordOtpView> {
                                   const SizedBox(
                                     height: 10,
                                   ),
-                                  Text(
-                                      'Code has been sent to johndoe@gmail.com Enter the code to verify your account',
-                                      textAlign: TextAlign.center,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodySmall),
+                                  Text.rich(
+                                    TextSpan(
+                                      text: 'Code has been sent to ',
+                                      style:
+                                          Theme.of(context).textTheme.bodySmall,
+                                      children: [
+                                        TextSpan(
+                                          text: 'johndoe@gmail.com',
+                                          style: TextStyle(
+                                            color:
+                                                Theme.of(context).primaryColor,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text:
+                                              ' Enter the code to verify your account',
+                                        ),
+                                      ],
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
                                   const SizedBox(
                                     height: 40,
                                   ),
                                   InlineInput(
-                                    controller: emailController,
-                                    label: 'Email',
+                                    controller: codeController,
+                                    label: 'Enter Code',
                                   ),
                                   const SizedBox(
                                     height: 30,
@@ -110,8 +124,8 @@ class _FogotPasswordOtpViewState extends State<FogotPasswordOtpView> {
                                     children: [
                                       MyButton(
                                         text: 'Verify Account',
-                                        onPressed: () async {
-                                          Get.to(CreateNewPasswordView());
+                                        onPressed: () {
+                                          Get.to(UploadProfilePictureView());
                                         },
                                       ),
                                     ],

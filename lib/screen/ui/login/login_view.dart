@@ -1,6 +1,10 @@
+import 'package:ets_rider/screen/ui/forgot_password/forgot_password_view.dart';
+import 'package:ets_rider/screen/ui/forgot_password/forgot_password_view_model.dart';
+import 'package:ets_rider/screen/ui/navbar/navbar_view.dart';
 import 'package:ets_rider/screen/widgets/button/button.dart';
 import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //import 'package:truman_staff/utils/tools.dart' as tools;
@@ -108,13 +112,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                               InlineInput(
                                 controller: passwordController,
                                 label: 'Password',
-                                //    obscureText: !staffLoginPasswordVisibility,
-
-                                // preffixWidget: Icon(MdiIcons.lock,
-                                //     color: ().greyText),
-
-                                //validator: tools.Validators.validateEmail,
-
                                 suffixWidget: InkWell(
                                   onTap: () => setState(
                                     () => staffLoginPasswordVisibility =
@@ -124,6 +121,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     staffLoginPasswordVisibility
                                         ? Icons.visibility_outlined
                                         : Icons.visibility_off_outlined,
+
+                                    color: Theme.of(context).primaryColor,
                                     //color: themeData.iconColor,
                                     size: 22,
                                   ),
@@ -141,7 +140,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       children: [],
                                     ),
                                     InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Get.to(ForgotPasswordView());
+                                      },
                                       child: Text('Forgot Password ?',
                                           style: Theme.of(context)
                                               .textTheme
@@ -158,25 +159,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   MyButton(
                                     text: 'Login',
                                     onPressed: () async {
-                                      // if (!_formKey.currentState!.validate()) {
-                                      // } else {
-                                      //   var body = {
-                                      //     'identifier': emailController.text,
-                                      //     'password': passwordController.text,
-                                      //     'location': Provider.of<AuthState>(
-                                      //             context,
-                                      //             listen: false)
-                                      //         .userLocation,
-
-                                      //     // 'location': '-122.084, 37.4219983',
-                                      //     'device_id':
-                                      //         // 'mobile'
-                                      //         Provider.of<AuthState>(context,
-                                      //                 listen: false)
-                                      //             .userDeviceId
-                                      //   };
-                                      //   print(body);
-                                      //   AuthService().login(context, body);
+                                      Get.to(NavBarView());
                                     },
                                   ),
                                 ],
@@ -203,8 +186,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               text: 'Don’t have account? ',
                                             ),
                                             TextSpan(
-                                              text: 'Sign Up',
-                                            ),
+                                                text: 'Sign Up',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodySmall!
+                                                    .copyWith(
+                                                        color: Theme.of(context)
+                                                            .primaryColor)),
                                           ],
                                         )),
                                   ),

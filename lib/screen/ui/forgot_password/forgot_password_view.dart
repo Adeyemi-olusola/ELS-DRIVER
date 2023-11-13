@@ -1,25 +1,27 @@
+import 'package:ets_rider/screen/ui/forgot_password/forgot_password_otp_view.dart';
 import 'package:ets_rider/screen/widgets/button/button.dart';
 import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //import 'package:truman_staff/utils/tools.dart' as tools;
 
-class FogotPasswordView extends StatefulWidget {
-  const FogotPasswordView({
+class ForgotPasswordView extends StatefulWidget {
+  const ForgotPasswordView({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<FogotPasswordView> createState() => _FogotPasswordViewState();
+  State<ForgotPasswordView> createState() => _ForgotPasswordViewState();
 }
 
-class _FogotPasswordViewState extends State<FogotPasswordView> {
+class _ForgotPasswordViewState extends State<ForgotPasswordView> {
   late TextEditingController emailController;
   late TextEditingController passwordController;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  bool FogotPasswordViewPasswordVisibility = false;
+  bool ForgotPasswordViewPasswordVisibility = false;
 
   bool staffLoginPasswordVisibility = false;
 
@@ -34,8 +36,8 @@ class _FogotPasswordViewState extends State<FogotPasswordView> {
 
   DateTime? currentBackPressTime;
   Future<bool> _onWillPop() async {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const FogotPasswordView()));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const ForgotPasswordView()));
     return false;
   }
 
@@ -76,7 +78,6 @@ class _FogotPasswordViewState extends State<FogotPasswordView> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                            
                               const SizedBox(
                                 height: 50,
                               ),
@@ -93,7 +94,10 @@ class _FogotPasswordViewState extends State<FogotPasswordView> {
                               const SizedBox(
                                 height: 10,
                               ),
-                              Text('No worries! Enter your email address below and we will send you a code to reset password.', textAlign: TextAlign.center , style: Theme.of(context).textTheme.bodySmall),
+                              Text(
+                                  'No worries! Enter your email address below and we will send you a code to reset password.',
+                                  textAlign: TextAlign.center,
+                                  style: Theme.of(context).textTheme.bodySmall),
                               const SizedBox(
                                 height: 40,
                               ),
@@ -104,11 +108,9 @@ class _FogotPasswordViewState extends State<FogotPasswordView> {
                               const SizedBox(
                                 height: 30,
                               ),
-                              
                               const SizedBox(
                                 height: 10,
                               ),
-                              
                               const SizedBox(
                                 height: 30,
                               ),
@@ -117,7 +119,7 @@ class _FogotPasswordViewState extends State<FogotPasswordView> {
                                   MyButton(
                                     text: 'Send Reset Instruction',
                                     onPressed: () async {
-                                      
+                                      Get.to(FogotPasswordOtpView());
                                     },
                                   ),
                                 ],
@@ -125,7 +127,6 @@ class _FogotPasswordViewState extends State<FogotPasswordView> {
                               const SizedBox(
                                 height: 10,
                               ),
-                         
                             ],
                           ),
                         ),
