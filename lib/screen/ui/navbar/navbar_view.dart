@@ -20,7 +20,7 @@ class _NavBarViewState extends State<NavBarView> {
             child: Scaffold(
               body: viewModel.widgetList[viewModel.currentIndex],
               bottomNavigationBar: Container(
-                height: 68,
+                height: 71,
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 7),

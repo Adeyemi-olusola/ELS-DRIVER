@@ -3,14 +3,14 @@ import 'package:ets_rider/screen/widgets/button/button.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-class ReservationView extends StatefulWidget {
-  const ReservationView({super.key});
+class ApplyPromoCodeView extends StatefulWidget {
+  const ApplyPromoCodeView({super.key});
 
   @override
-  State<ReservationView> createState() => _ReservationViewState();
+  State<ApplyPromoCodeView> createState() => _ApplyPromoCodeViewState();
 }
 
-class _ReservationViewState extends State<ReservationView> {
+class _ApplyPromoCodeViewState extends State<ApplyPromoCodeView> {
   String selectedValue = '';
 
   List<String> options = ['Option 1', 'Option 2', 'Option 3'];

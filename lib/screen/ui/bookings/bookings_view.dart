@@ -38,11 +38,30 @@ class _BookingViewState extends State<BookingView> {
                       .bodySmall!
                       .copyWith(color: Theme.of(context).primaryColor),
                   tabs: [
-                    Text('  Active Now  '),
-                    Text('Completed'),
-                    Text('Cancelled'),
+                    Text(
+                      '  Active Now  ',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall!
+                          .copyWith(color: Colors.grey),
+                    ),
+                    Text(
+                      'Completed',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall!
+                          .copyWith(color: Colors.grey),
+                    ),
+                    Text(
+                      'Cancelled',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall!
+                          .copyWith(color: Colors.grey),
+                    ),
                   ],
                 ),
+                
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [Text('Tabs Demo'), Icon(Icons.search)],

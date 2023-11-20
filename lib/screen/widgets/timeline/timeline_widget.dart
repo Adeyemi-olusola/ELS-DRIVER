@@ -7,15 +7,16 @@ class TimelineItem extends StatelessWidget {
   final IconData icon;
   final bool isFirst;
   final bool isLast;
+  final bool showEditIcon;
 
-  TimelineItem({
-    required this.title,
-    required this.subTitle,
-    required this.time,
-    required this.icon,
-    this.isFirst = false,
-    this.isLast = false,
-  });
+  TimelineItem(
+      {required this.title,
+      required this.subTitle,
+      required this.time,
+      required this.icon,
+      this.isFirst = false,
+      this.isLast = false,
+      this.showEditIcon = false});
 
   @override
   Widget build(BuildContext context) {
@@ -63,26 +64,36 @@ class TimelineItem extends StatelessWidget {
             ],
           ),
           SizedBox(width: 30.0),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 7),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(title,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall!
-                        .copyWith(fontSize: 16, fontWeight: FontWeight.w600)),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(subTitle,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall!
-                        .copyWith(fontSize: 12, fontWeight: FontWeight.w500)),
-              ],
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 7),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(title,
+                          style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                              fontSize: 16, fontWeight: FontWeight.w600)),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(subTitle,
+                          style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                              fontSize: 12, fontWeight: FontWeight.w500 , color: Colors.grey)),
+                    ],
+                  ),
+                  Container(
+                      child: showEditIcon
+                          ? Icon(
+                              Icons.edit,
+                              color: Theme.of(context).primaryColor,
+                            )
+                          : Container())
+                ],
+              ),
             ),
           ),
         ],

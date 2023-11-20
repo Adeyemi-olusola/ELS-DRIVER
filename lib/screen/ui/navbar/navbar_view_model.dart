@@ -1,4 +1,6 @@
 import 'package:ets_rider/screen/ui/bookings/bookings_view.dart';
+import 'package:ets_rider/screen/ui/home/home_view.dart';
+import 'package:ets_rider/screen/ui/inbox/inbox_view.dart';
 import 'package:ets_rider/screen/ui/profile/profile/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -20,9 +22,9 @@ class NavigationBarViewModel extends BaseViewModel {
     'Profile',
   ];
   List<Widget> _widgetList = [
-    ProfileWidget(),
+    UberFrontPage(),
     BookingView(),
-    ProfileWidget(),
+    InboxView(),
     ProfileWidget(),
     ProfileWidget(),
   ];

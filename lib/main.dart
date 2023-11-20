@@ -3,6 +3,7 @@ import 'package:ets_rider/screen/ui/chat/chat_detail.dart/chat_detail_view.dart'
 import 'package:ets_rider/screen/ui/forgot_password/create_new_password_view.dart';
 import 'package:ets_rider/screen/ui/forgot_password/forgot_password_otp_view.dart';
 import 'package:ets_rider/screen/ui/forgot_password/forgot_password_view.dart';
+import 'package:ets_rider/screen/ui/home/home_view.dart';
 import 'package:ets_rider/screen/ui/inbox/inbox_view.dart';
 import 'package:ets_rider/screen/ui/login/login_view.dart';
 import 'package:ets_rider/screen/ui/navbar/navbar_view.dart';
@@ -40,6 +41,6 @@ class MyApp extends StatelessWidget {
         theme: defaultTheme,
         debugShowCheckedModeBanner: false,
         themeMode: _themeManager.themeMode,
-        home: NavBarView());
+        home: UberFrontPage());
   }
 }
