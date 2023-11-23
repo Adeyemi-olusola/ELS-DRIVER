@@ -1,7 +1,8 @@
-import 'package:ets_rider/screen/ui/signUp/sigup_view_model.dart';
-import 'package:ets_rider/screen/ui/signUp/verify_account_view.dart';
-import 'package:ets_rider/screen/widgets/button/button.dart';
-import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
+import 'package:ets_driver/screen/ui/signUp/sigup_view_model.dart';
+import 'package:ets_driver/screen/ui/signUp/verify_account_view.dart';
+import 'package:ets_driver/screen/widgets/appbar/appBar_widget.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
+import 'package:ets_driver/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stacked/stacked.dart';
@@ -22,105 +23,117 @@ class _CreateAccountFormViewState extends State<CreateAccountFormView> {
         viewModelBuilder: () => SignUpViewModel(),
         builder: (context, viewModel, child) {
           return Scaffold(
+              appBar: CustomAppBar(
+                title: '',
+                showBackButton: true,
+              ),
               body: SafeArea(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
                       children: [
-                        Text('Create Your Account',
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.displayLarge!),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                            child: InlineInput(
-                          label: 'First Name',
-                        )),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Expanded(
-                            child: InlineInput(
-                          label: 'Last Name',
-                        ))
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    InlineInput(
-                      label: 'Email',
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    InlineInput(
-                      label: 'Address',
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    InlineInput(
-                      label: 'Phone',
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    InlineInput(
-                      label: 'Password',
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    InlineInput(
-                      label: 'Confirm Password',
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        Checkbox(
-                          value: isChecked,
-                          activeColor: Theme.of(context).primaryColor,
-                          onChanged: (value) {
-                            setState(() {
-                              isChecked = value!;
-                            });
-                          },
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FittedBox(
+                              child: Container(
+                                //width: MediaQuery.of(context).size.width,
+                                child: Text('Create Your Account',
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .displayLarge!),
+                              ),
+                            ),
+                          ],
                         ),
                         const SizedBox(
-                          width: 5,
+                          height: 20,
                         ),
-                        Expanded(
-                            child: Text(
-                                'By creating an account, you aggree to our Terms and Conditions',
-                                style: Theme.of(context).textTheme.bodySmall)),
+                        Row(
+                          children: [
+                            Expanded(
+                                child: InlineInput(
+                              label: 'First Name',
+                            )),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Expanded(
+                                child: InlineInput(
+                              label: 'Last Name',
+                            ))
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        InlineInput(
+                          label: 'Email',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        InlineInput(
+                          label: 'Address',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        InlineInput(
+                          label: 'Phone',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        InlineInput(
+                          label: 'Password',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        InlineInput(
+                          label: 'Confirm Password',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: isChecked,
+                              activeColor: Theme.of(context).primaryColor,
+                              onChanged: (value) {
+                                setState(() {
+                                  isChecked = value!;
+                                });
+                              },
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Expanded(
+                                child: Text(
+                                    'By creating an account, you aggree to our Terms and Conditions',
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall)),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        MyButton(
+                          text: 'Sign Up',
+                          onPressed: () {
+                            Get.to(const RegistrationOtpView());
+                          },
+                        )
                       ],
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    MyButton(
-                      text: 'Sign Up',
-                      onPressed: () {
-                        Get.to(RegistrationOtpView());
-                      },
-                    )
-                  ],
+                  ),
                 ),
-              ),
-            ),
-          ));
+              ));
         });
   }
 }

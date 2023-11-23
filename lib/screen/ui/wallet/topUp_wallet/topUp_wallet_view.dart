@@ -1,6 +1,6 @@
-import 'package:ets_rider/screen/ui/wallet/topUp_wallet/topUp_wallet_view_model.dart';
-import 'package:ets_rider/screen/widgets/button/button.dart';
-import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
+import 'package:ets_driver/screen/ui/wallet/topUp_wallet/topUp_wallet_view_model.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
+import 'package:ets_driver/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -42,6 +42,7 @@ class _TopUpWalletViewState extends State<TopUpWalletView> {
                     crossAxisSpacing: 20,
                     childAspectRatio: 2,
                     shrinkWrap: true,
+                    crossAxisCount: 3,
                     children: List.generate(
                         9,
                         (index) => Container(
@@ -61,12 +62,11 @@ class _TopUpWalletViewState extends State<TopUpWalletView> {
                                     .copyWith(
                                         color: Theme.of(context).primaryColor),
                               ),
-                            ))).toList(),
-                    crossAxisCount: 3),
-                SizedBox(
+                            ))).toList()),
+                const SizedBox(
                   height: 20,
                 ),
-                MyButton(text: 'Continue')
+                const MyButton(text: 'Continue')
               ],
             ),
           ));

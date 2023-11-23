@@ -1,4 +1,6 @@
-import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
+import 'package:ets_driver/screen/widgets/appbar/appBar_widget.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
+import 'package:ets_driver/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -16,6 +18,7 @@ class _EditProfileViewState extends State<EditProfileView> {
         viewModelBuilder: () => BaseViewModel(),
         builder: (context, viewModel, child) {
           return Scaffold(
+            appBar: CustomAppBar(title: 'Edit Profile' ,showBackButton: true,),
             body: SingleChildScrollView(
               child: SafeArea(
                 child: Padding(
@@ -25,33 +28,37 @@ class _EditProfileViewState extends State<EditProfileView> {
                       InlineInput(
                         label: 'Firstname',
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       InlineInput(
                         label: 'Lastname',
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       InlineInput(
                         label: 'Email',
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       InlineInput(
                         label: 'Address',
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       InlineInput(
                         label: 'Phone',
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
-                      )
+                      ),
+                      InlineInput(
+                        label: 'Company contact',
+                      ),
+                      MyButton(text: 'Update')
                     ],
                   ),
                 ),

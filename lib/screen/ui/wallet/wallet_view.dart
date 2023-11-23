@@ -1,6 +1,9 @@
-import 'package:ets_rider/screen/ui/wallet/wallet_view_model.dart';
+import 'package:ets_driver/screen/ui/transaction/transaction_history/transaction_history_view.dart';
+import 'package:ets_driver/screen/ui/wallet/transfer/transfer_view.dart';
+import 'package:ets_driver/screen/ui/wallet/wallet_view_model.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:stacked/stacked.dart';
 
 class WalletView extends StatefulWidget {
@@ -29,7 +32,7 @@ class _WalletViewState extends State<WalletView> {
                             height: 184,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
-                                color: Color(0xffFEC02D),
+                                color: const Color(0xffFEC02D),
                                 borderRadius: BorderRadius.circular(20)),
                           ),
                           Container(
@@ -61,7 +64,7 @@ class _WalletViewState extends State<WalletView> {
                                       Column(
                                         children: [
                                           Text(
-                                            'Wiillaim Temitope',
+                                            'Account Number',
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .bodySmall!
@@ -71,7 +74,7 @@ class _WalletViewState extends State<WalletView> {
                                                         FontWeight.w700),
                                           ),
                                           Text(
-                                            'Wiillaim Temitope',
+                                            '0254545454554',
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .bodySmall!
@@ -82,8 +85,30 @@ class _WalletViewState extends State<WalletView> {
                                           )
                                         ],
                                       ),
-                                      Image.asset(
-                                          'assets/wallet_assets/mastercard_logo.png')
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'Bank Name',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall!
+                                                .copyWith(
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.w700),
+                                          ),
+                                          Text(
+                                            'Wema Bank',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall!
+                                                .copyWith(
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                          )
+                                        ],
+                                      ),
                                     ],
                                   ),
                                   Row(
@@ -95,7 +120,7 @@ class _WalletViewState extends State<WalletView> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Wiillaim Temitope',
+                                            'Your balance',
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .bodySmall!
@@ -105,7 +130,7 @@ class _WalletViewState extends State<WalletView> {
                                                         FontWeight.w600),
                                           ),
                                           Text(
-                                            'Wiillaim Temitope',
+                                            'NGN 5,750',
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .bodySmall!
@@ -117,8 +142,16 @@ class _WalletViewState extends State<WalletView> {
                                           )
                                         ],
                                       ),
-                                      Image.asset(
-                                          'assets/wallet_assets/mastercard_logo.png')
+                                      GestureDetector(
+                                        onTap: () {
+                                          Get.to(TransferView());
+                                        },
+                                        child: Container(
+                                            height: 40,
+                                            width: 100,
+                                            child:
+                                                WhiteButton(text: 'Transfer')),
+                                      )
                                     ],
                                   ),
                                 ],
@@ -128,7 +161,7 @@ class _WalletViewState extends State<WalletView> {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        padding: const EdgeInsets.symmetric(vertical: 25),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -139,21 +172,26 @@ class _WalletViewState extends State<WalletView> {
                                   .bodySmall!
                                   .copyWith(color: Colors.white, fontSize: 16),
                             ),
-                            Text(
-                              'See All',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall!
-                                  .copyWith(
-                                      color: Theme.of(context).primaryColor,
-                                      fontSize: 16),
+                            InkWell(
+                              onTap: () {
+                                Get.to(TransactionHistoryView());
+                              },
+                              child: Text(
+                                'See All',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall!
+                                    .copyWith(
+                                        color: Theme.of(context).primaryColor,
+                                        fontSize: 16),
+                              ),
                             )
                           ],
                         ),
                       ),
                       ListView.separated(
                           itemCount: 10,
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           separatorBuilder: (context, index) {
                             return Container(
@@ -161,7 +199,7 @@ class _WalletViewState extends State<WalletView> {
                             );
                           },
                           itemBuilder: (context, index) {
-                            return Container(
+                            return SizedBox(
                               height: 50,
                               child: Row(
                                 children: [
@@ -173,7 +211,7 @@ class _WalletViewState extends State<WalletView> {
                                         borderRadius:
                                             BorderRadius.circular(2000)),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 13,
                                   ),
                                   Expanded(
@@ -197,7 +235,7 @@ class _WalletViewState extends State<WalletView> {
                                             ),
                                             Container(
                                               child: Text(
-                                                '13',
+                                                'NGN 50,000',
                                                 style: Theme.of(context)
                                                     .textTheme
                                                     .bodySmall!
@@ -214,7 +252,7 @@ class _WalletViewState extends State<WalletView> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              'Daniel Austin',
+                                              'Dec 20,2024 |10:00AM',
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .bodySmall!
@@ -225,14 +263,15 @@ class _WalletViewState extends State<WalletView> {
                                                       color: Colors.grey),
                                             ),
                                             Text(
-                                              '13:29',
+                                              'Payment',
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .bodySmall!
                                                   .copyWith(
                                                       fontWeight:
                                                           FontWeight.w500,
-                                                      fontSize: 16),
+                                                      fontSize: 14,
+                                                      color: Colors.grey),
                                             ),
                                           ],
                                         ),
@@ -265,7 +304,7 @@ class WalletWidget extends StatelessWidget {
             body: ListView.separated(
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  return Container(
+                  return SizedBox(
                     height: 50,
                     child: Row(
                       children: [
@@ -276,7 +315,7 @@ class WalletWidget extends StatelessWidget {
                               color: Colors.red,
                               borderRadius: BorderRadius.circular(2000)),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 13,
                         ),
                         Expanded(

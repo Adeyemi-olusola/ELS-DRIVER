@@ -1,9 +1,8 @@
-import 'package:ets_rider/screen/ui/forgot_password/forgot_password_otp_view.dart';
-import 'package:ets_rider/screen/widgets/button/button.dart';
-import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
+import 'package:ets_driver/screen/ui/forgot_password/forgot_password_otp_view.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
+import 'package:ets_driver/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 //import 'package:truman_staff/utils/tools.dart' as tools;
 
@@ -119,7 +118,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                   MyButton(
                                     text: 'Send Reset Instruction',
                                     onPressed: () async {
-                                      Get.to(FogotPasswordOtpView());
+                                      Get.to(const FogotPasswordOtpView());
                                     },
                                   ),
                                 ],

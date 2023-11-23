@@ -1,5 +1,5 @@
-import 'package:ets_rider/screen/ui/wallet/topUpwithCardView/topUpwithCardViewModel.dart';
-import 'package:ets_rider/screen/widgets/button/button.dart';
+import 'package:ets_driver/screen/ui/wallet/topUpwithCardView/topUpwithCardViewModel.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -30,7 +30,7 @@ class _TopUpWithCardViewState extends State<TopUpWithCardView> {
                         children: [
                           Image.asset(
                               'assets/wallet_assets/mastercard_logo.png'),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Text(
@@ -41,10 +41,10 @@ class _TopUpWithCardViewState extends State<TopUpWithCardView> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  MyButton(text: 'Continue')
+                  const MyButton(text: 'Continue')
                 ],
               ),
             ),

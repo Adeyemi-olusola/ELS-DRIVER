@@ -1,4 +1,4 @@
-name: ets_rider
+name: ets_driver
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -43,6 +43,12 @@ dependencies:
   get: ^4.6.5
   loading_animation_widget: ^1.2.0+4
   flutter_spinkit: ^5.2.0
+  material_design_icons_flutter: ^7.0.7296
+  geolocator: ^10.1.0
+  local_auth: ^2.1.7
+  hive: ^2.2.3
+  image_picker: ^1.0.4
+  dots_indicator: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +77,8 @@ flutter:
     - assets/wallet_assets/
     - assets/onboarding_assets/
     - assets/navbar/
+    - assets/default_assets/
+    - assets/splashscreen/
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

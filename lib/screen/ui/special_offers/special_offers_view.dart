@@ -1,4 +1,4 @@
-import 'package:ets_rider/screen/ui/notification/notification_viewmodel.dart';
+import 'package:ets_driver/screen/ui/notification/notification_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -29,12 +29,13 @@ class _SpecialOffersViewState extends State<SpecialOffersView> {
                           .bodySmall!
                           .copyWith(fontWeight: FontWeight.w700, fontSize: 18),
                     ),
-                    SizedBox(height: 10,),
-                
+                    const SizedBox(
+                      height: 10,
+                    ),
                     ListView.separated(
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
-                          return SpecialOfferCardWidget();
+                          return const SpecialOfferCardWidget();
                         },
                         separatorBuilder: (context, index) {
                           return Container(
@@ -57,21 +58,23 @@ class SpecialOfferCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(color: Theme.of(context).cardColor  , borderRadius: BorderRadius.circular(16)),
+        decoration: BoxDecoration(
+            color: Theme.of(context).cardColor,
+            borderRadius: BorderRadius.circular(16)),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Container(
+          child: SizedBox(
             height: 48,
             child: Row(
               children: [
                 Container(
-                  height:30,
+                  height: 30,
                   width: 30,
                   decoration: BoxDecoration(
-                      color: Color(0xfffebb1b),
+                      color: const Color(0xfffebb1b),
                       borderRadius: BorderRadius.circular(434343)),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Column(
@@ -83,10 +86,13 @@ class SpecialOfferCardWidget extends StatelessWidget {
                       style: Theme.of(context)
                           .textTheme
                           .bodySmall!
-                          .copyWith( fontSize: 14),
+                          .copyWith(fontSize: 14),
                     ),
                     Text('Special promotion only valid today',
-                        style: Theme.of(context).textTheme.bodySmall!.copyWith(fontSize: 12 , color: Color(0xff9e9e9e)))
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodySmall!
+                            .copyWith(fontSize: 12, color: const Color(0xff9e9e9e)))
                   ],
                 )
               ],

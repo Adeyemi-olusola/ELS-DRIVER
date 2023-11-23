@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-
-
 class ChatScreen extends StatefulWidget {
+  const ChatScreen({super.key});
+
   @override
   State createState() => ChatScreenState();
 }
@@ -25,7 +25,20 @@ class ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('WhatsApp Clone'),
+        elevation: 0,
+        actions: [
+          Icon(
+            Icons.phone_callback_outlined,
+            color: Colors.grey,
+          ),
+          SizedBox(
+            width: 20,
+          )
+        ],
+        title: Text(
+          'Daniel Austin',
+          style: Theme.of(context).textTheme.bodySmall!.copyWith(fontSize: 22),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -34,12 +47,12 @@ class ChatScreenState extends State<ChatScreen> {
             Flexible(
               child: ListView.builder(
                 reverse: true,
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 itemCount: _messages.length,
                 itemBuilder: (_, int index) => _messages[index],
               ),
             ),
-            Divider(height: 1.0),
+            const Divider(height: 1.0),
             Container(
               decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
@@ -63,19 +76,24 @@ class ChatScreenState extends State<ChatScreen> {
               child: TextField(
                 controller: _textController,
                 onSubmitted: _handleSubmitted,
+                style: Theme.of(context).textTheme.bodySmall,
                 autofocus: true,
-                decoration:
-                    InputDecoration.collapsed(hintText: 'Send a message'),
+                decoration: InputDecoration.collapsed(
+                    hintText: 'Send a message',
+
+                    hintStyle: Theme.of(context).textTheme.bodySmall!),
               ),
             ),
             Container(
               decoration: BoxDecoration(color: Theme.of(context).primaryColor),
               child: IconButton(
-                icon: Icon(Icons.send , color: Colors.black,),
+                icon: const Icon(
+                  Icons.send,
+                  color: Colors.black,
+                ),
                 onPressed: () => _handleSubmitted(_textController.text),
               ),
             ),
-            
           ],
         ),
       ),
@@ -84,7 +102,7 @@ class ChatScreenState extends State<ChatScreen> {
 }
 
 class ChatMessage extends StatelessWidget {
-  ChatMessage({required this.text});
+  const ChatMessage({super.key, required this.text});
 
   final String text;
 
@@ -95,24 +113,27 @@ class ChatMessage extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-         
           Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
-                
                 Container(
                   decoration: BoxDecoration(
-                                      color:Colors.grey,
-                                      borderRadius: BorderRadius.only(topRight: Radius.circular(10),bottomLeft: Radius.circular(10) , bottomRight: Radius.circular(10))
-
-
-
-                  ),
+                      color: Theme.of(context).primaryColor,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10))),
                   margin: const EdgeInsets.only(top: 5.0),
                   child: Padding(
-                    padding: const EdgeInsets.all(10.0) ,
-                    child: Text(text , style: Theme.of(context).textTheme.bodySmall,),
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                      text,
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall!
+                          .copyWith(color: Colors.black),
+                    ),
                   ),
                 ),
               ],

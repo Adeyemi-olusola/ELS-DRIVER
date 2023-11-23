@@ -1,7 +1,8 @@
-import 'package:ets_rider/screen/ui/bookings/active_booking/active_booking_view.dart';
-import 'package:ets_rider/screen/ui/bookings/bookings_viewModel.dart';
-import 'package:ets_rider/screen/ui/call/call_list_view.dart';
-import 'package:ets_rider/screen/ui/chat/chat_list/chat_view.dart';
+import 'package:ets_driver/screen/ui/bookings/active_booking/active_booking_view.dart';
+import 'package:ets_driver/screen/ui/bookings/bookings_viewModel.dart';
+import 'package:ets_driver/screen/ui/bookings/completed_booking/completed_booking_view.dart';
+import 'package:ets_driver/screen/ui/call/call_list_view.dart';
+import 'package:ets_driver/utils/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -26,7 +27,8 @@ class _BookingViewState extends State<BookingView> {
 
                 bottom: TabBar(
                   indicatorWeight: 6,
-                  indicatorPadding: EdgeInsets.only(top: 20),
+                  labelColor: defaultTheme.primaryColor,
+                  indicatorPadding: const EdgeInsets.only(top: 20),
                   indicatorColor: Theme.of(context).primaryColor,
                   indicatorSize: TabBarIndicatorSize.label,
                   unselectedLabelStyle: Theme.of(context)
@@ -39,39 +41,34 @@ class _BookingViewState extends State<BookingView> {
                       .copyWith(color: Theme.of(context).primaryColor),
                   tabs: [
                     Text(
-                      '  Active Now  ',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(color: Colors.grey),
+                      '  Active Trip ',
+                      // style: Theme.of(context)
+                      //     .textTheme
+                      //     .bodySmall!
+                      //     .copyWith(color: Colors.grey
+                      //     ),
                     ),
                     Text(
                       'Completed',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(color: Colors.grey),
+                      // style: Theme.of(context)
+                      //     .textTheme
+                      //     .bodySmall!
+                      //     .copyWith(color: Colors.grey),
                     ),
-                    Text(
-                      'Cancelled',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(color: Colors.grey),
-                    ),
+                   
                   ],
                 ),
-                
-                title: Row(
+
+                title: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Text('Tabs Demo'), Icon(Icons.search)],
+                  children: [Text('My History'), Icon(Icons.search)],
                 ),
               ),
-              body: TabBarView(
+              body: const TabBarView(
                 children: [
                   ActiveBookingView(),
-                  CallListView(),
-                  ActiveBookingView()
+                 
+                  CompletedBookingView()
                 ],
               ),
             ),

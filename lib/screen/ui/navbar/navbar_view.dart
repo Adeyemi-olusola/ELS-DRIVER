@@ -1,4 +1,4 @@
-import 'package:ets_rider/screen/ui/navbar/navbar_view_model.dart';
+import 'package:ets_driver/screen/ui/navbar/navbar_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stacked/stacked.dart';
@@ -19,8 +19,8 @@ class _NavBarViewState extends State<NavBarView> {
           return SafeArea(
             child: Scaffold(
               body: viewModel.widgetList[viewModel.currentIndex],
-              bottomNavigationBar: Container(
-                height: 71,
+              bottomNavigationBar: SizedBox(
+                height: 72,
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 7),
@@ -44,7 +44,7 @@ class _NavBarViewState extends State<NavBarView> {
                                                         .indexOf(e)
                                                 ? Theme.of(context).primaryColor
                                                 : Colors.grey),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 7,
                                         ),
                                         Text(

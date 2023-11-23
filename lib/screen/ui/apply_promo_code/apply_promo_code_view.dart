@@ -1,5 +1,5 @@
-import 'package:ets_rider/screen/ui/reservation/reservation_view_model.dart';
-import 'package:ets_rider/screen/widgets/button/button.dart';
+import 'package:ets_driver/screen/ui/reservation/reservation_view_model.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -39,7 +39,7 @@ class _ApplyPromoCodeViewState extends State<ApplyPromoCodeView> {
                                   padding:
                                       const EdgeInsets.symmetric(vertical: 10),
                                   child: Container(
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                           color: Color(0xff1F222A)),
                                       child: Padding(
                                         padding: const EdgeInsets.all(10.0),
@@ -102,7 +102,7 @@ class _ApplyPromoCodeViewState extends State<ApplyPromoCodeView> {
                 Column(
                   children: [
                     Container(
-                      decoration: BoxDecoration(color: Color(0xff1F222A)),
+                      decoration: const BoxDecoration(color: Color(0xff1F222A)),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -110,11 +110,11 @@ class _ApplyPromoCodeViewState extends State<ApplyPromoCodeView> {
                           children: [
                             Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.location_city,
                                   color: Colors.grey,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Text(
@@ -125,11 +125,11 @@ class _ApplyPromoCodeViewState extends State<ApplyPromoCodeView> {
                             ),
                             Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.location_city,
                                   color: Colors.grey,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Text(
@@ -140,11 +140,11 @@ class _ApplyPromoCodeViewState extends State<ApplyPromoCodeView> {
                             ),
                             Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.location_city,
                                   color: Colors.grey,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Text(
@@ -157,10 +157,10 @@ class _ApplyPromoCodeViewState extends State<ApplyPromoCodeView> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    MyButton(text: 'Continue'),
+                    const MyButton(text: 'Continue'),
                   ],
                 )
               ],

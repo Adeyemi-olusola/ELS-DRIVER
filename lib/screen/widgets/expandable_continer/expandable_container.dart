@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ExpandableCardContainer extends StatefulWidget {
-  bool isExpanded = false;
-  final Widget? collapsedChild;
-  final Widget? expandedChild;
 
   ExpandableCardContainer(
       {Key? key,
@@ -11,6 +8,9 @@ class ExpandableCardContainer extends StatefulWidget {
       this.collapsedChild,
       this.expandedChild})
       : super(key: key);
+  bool isExpanded = false;
+  final Widget? collapsedChild;
+  final Widget? expandedChild;
 
   @override
   _ExpandableCardContainerState createState() =>
@@ -20,10 +20,10 @@ class ExpandableCardContainer extends StatefulWidget {
 class _ExpandableCardContainerState extends State<ExpandableCardContainer> {
   @override
   Widget build(BuildContext context) {
-    return new AnimatedContainer(
-      duration: new Duration(milliseconds: 200),
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 200),
       curve: Curves.easeInOut,
-      child: widget.isExpanded! ? widget.expandedChild : widget.collapsedChild,
+      child: widget.isExpanded? widget.expandedChild : widget.collapsedChild,
     );
   }
 }

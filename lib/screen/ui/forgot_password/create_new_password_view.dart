@@ -1,8 +1,7 @@
-import 'package:ets_rider/screen/widgets/button/button.dart';
-import 'package:ets_rider/screen/widgets/dialog/dialog.dart';
-import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
+import 'package:ets_driver/screen/widgets/dialog/dialog.dart';
+import 'package:ets_driver/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 //import 'package:truman_staff/utils/tools.dart' as tools;
 

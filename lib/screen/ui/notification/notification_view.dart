@@ -1,4 +1,4 @@
-import 'package:ets_rider/screen/ui/notification/notification_viewmodel.dart';
+import 'package:ets_driver/screen/ui/notification/notification_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -29,12 +29,13 @@ class _NotificationViewState extends State<NotificationView> {
                           .bodySmall!
                           .copyWith(fontWeight: FontWeight.w700, fontSize: 18),
                     ),
-                    SizedBox(height: 10,),
-                
+                    const SizedBox(
+                      height: 10,
+                    ),
                     ListView.separated(
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
-                          return NotificationCardWidget();
+                          return const NotificationCardWidget();
                         },
                         separatorBuilder: (context, index) {
                           return Container(
@@ -57,21 +58,23 @@ class NotificationCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(color: Theme.of(context).cardColor  , borderRadius: BorderRadius.circular(16)),
+        decoration: BoxDecoration(
+            color: Theme.of(context).cardColor,
+            borderRadius: BorderRadius.circular(16)),
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Container(
+          padding: const EdgeInsets.all(10.0),
+          child: SizedBox(
             height: 68,
             child: Row(
               children: [
                 Container(
-                  height: 68,
-                  width: 68,
+                  height: 40,
+                  width: 40,
                   decoration: BoxDecoration(
-                      color: Color(0xfffebb1b),
+                      color: const Color(0xfffebb1b),
                       borderRadius: BorderRadius.circular(434343)),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Column(
@@ -83,7 +86,7 @@ class NotificationCardWidget extends StatelessWidget {
                       style: Theme.of(context)
                           .textTheme
                           .bodySmall!
-                          .copyWith(fontWeight: FontWeight.w700, fontSize: 18),
+                          .copyWith(fontWeight: FontWeight.w600, fontSize: 16),
                     ),
                     Text('Special promotion only valid today',
                         style: Theme.of(context).textTheme.bodySmall!)

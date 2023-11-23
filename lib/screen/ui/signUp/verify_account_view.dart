@@ -1,10 +1,9 @@
-import 'package:ets_rider/screen/ui/forgot_password/forgot_password_view_model.dart';
-import 'package:ets_rider/screen/ui/signUp/upload_picture_view.dart';
-import 'package:ets_rider/screen/widgets/button/button.dart';
-import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
+import 'package:ets_driver/screen/ui/forgot_password/forgot_password_view_model.dart';
+import 'package:ets_driver/screen/ui/signUp/upload_picture_view.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
+import 'package:ets_driver/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:stacked/stacked.dart';
 
 //import 'package:truman_staff/utils/tools.dart' as tools;
@@ -92,7 +91,7 @@ class _RegistrationOtpViewState extends State<RegistrationOtpView> {
                                                 Theme.of(context).primaryColor,
                                           ),
                                         ),
-                                        TextSpan(
+                                        const TextSpan(
                                           text:
                                               ' Enter the code to verify your account',
                                         ),
@@ -112,7 +111,7 @@ class _RegistrationOtpViewState extends State<RegistrationOtpView> {
                                   ),
                                   Text(
                                     '${viewModel.seconds} seconds',
-                                    style: TextStyle(fontSize: 24),
+                                    style: const TextStyle(fontSize: 24),
                                   ),
                                   const SizedBox(
                                     height: 10,
@@ -125,7 +124,7 @@ class _RegistrationOtpViewState extends State<RegistrationOtpView> {
                                       MyButton(
                                         text: 'Verify Account',
                                         onPressed: () {
-                                          Get.to(UploadProfilePictureView());
+                                          Get.to(const UploadProfilePictureView());
                                         },
                                       ),
                                     ],

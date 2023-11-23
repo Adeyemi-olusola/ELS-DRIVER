@@ -1,8 +1,7 @@
-import 'package:ets_rider/screen/ui/bookings/active_booking/active_booking_view.dart';
-import 'package:ets_rider/screen/ui/bookings/bookings_viewModel.dart';
-import 'package:ets_rider/screen/ui/call/call_list_view.dart';
-import 'package:ets_rider/screen/ui/chat/chat_list/chat_view.dart';
-import 'package:ets_rider/screen/ui/inbox/inbox_view_model.dart';
+import 'package:ets_driver/screen/ui/call/call_list_view.dart';
+import 'package:ets_driver/screen/ui/chat/chat_list/chat_view.dart';
+import 'package:ets_driver/screen/ui/inbox/inbox_view_model.dart';
+import 'package:ets_driver/utils/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -22,14 +21,18 @@ class _InboxViewState extends State<InboxView> {
           return DefaultTabController(
             length: 3,
             child: Scaffold(
+              
               appBar: AppBar(
+              
                 //  leading: Text('My Booking'),
 
                 bottom: TabBar(
+                  padding: EdgeInsets.symmetric(horizontal: 20,),
                   indicatorWeight: 6,
-                  indicatorPadding: EdgeInsets.only(top: 20),
+                  indicatorPadding: const EdgeInsets.only(top: 20),
                   indicatorColor: Theme.of(context).primaryColor,
-                  indicatorSize: TabBarIndicatorSize.label,
+                  //indicatorSize: TabBarIndicatorSize.label,
+                  labelColor: defaultTheme.primaryColor,
                   unselectedLabelStyle: Theme.of(context)
                       .textTheme
                       .bodySmall!
@@ -38,25 +41,21 @@ class _InboxViewState extends State<InboxView> {
                       .textTheme
                       .bodySmall!
                       .copyWith(color: Theme.of(context).primaryColor),
-                  tabs: [
+                  tabs: const [
                     Text('Chats'),
                     Text('Calls'),
-          
                   ],
                 ),
-                title: Row(
+                title:  Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Text('Tabs Demo'), Icon(Icons.search)],
+                  children: [Text('InBox' , style: defaultTheme.textTheme.labelMedium!.copyWith(color: Colors.white),), Icon(Icons.search)],
                 ),
               ),
-              body: TabBarView(
-                children: [
-                  ChatsView(),
-                  CallListView()
-             
-                  
-                  
-                ],
+              body: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: const TabBarView(
+                  children: [ChatsView(), CallListView()],
+                ),
               ),
             ),
           );

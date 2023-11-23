@@ -1,4 +1,4 @@
-import 'package:ets_rider/utils/themes.dart';
+import 'package:ets_driver/utils/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -32,7 +32,7 @@ class _InlineInputState extends State<InlineInput> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: Color(0xff1f222a)),
+      decoration: const BoxDecoration(color: Color(0xff1f222a)),
       height: 81,
       child: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -58,16 +58,14 @@ class _InlineInputState extends State<InlineInput> {
               //  validator: widget.validator != null
               //     ? (value) => widget.validator!(value!)
               //     :   tools.Validators.isNotEmpty,
-              
 
               decoration: InputDecoration(
-                    border: OutlineInputBorder(borderSide: BorderSide.none),
+                border: const OutlineInputBorder(borderSide: BorderSide.none),
                 // border: OutlineInputBorder(borderSide: BorderSide.none),
 
                 hintText: '',
-                 contentPadding: EdgeInsets.only(top: 7, bottom: 0),
+                contentPadding: const EdgeInsets.only(top: 7, bottom: 0),
                 enabledBorder: const UnderlineInputBorder(
-                  
                   borderSide: BorderSide(
                     color: Color(0xff1f222a),
                     width: 1,
@@ -115,7 +113,7 @@ class _InlineInputState extends State<InlineInput> {
                 ),
               ),
               style: defaultTheme.textTheme.bodySmall!
-                  .copyWith(fontSize: 16, color: Color(0xff9E9E9E)),
+                  .copyWith(fontSize: 16, color: const Color(0xff9E9E9E)),
             ),
           ],
         ),

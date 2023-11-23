@@ -1,32 +1,35 @@
-import 'package:ets_rider/screen/ui/bookings/bookings_view.dart';
-import 'package:ets_rider/screen/ui/home/home_view.dart';
-import 'package:ets_rider/screen/ui/inbox/inbox_view.dart';
-import 'package:ets_rider/screen/ui/profile/profile/profile_view.dart';
+import 'package:ets_driver/screen/ui/bookings/bookings_view.dart';
+import 'package:ets_driver/screen/ui/home/home_view.dart';
+import 'package:ets_driver/screen/ui/inbox/inbox_view.dart';
+import 'package:ets_driver/screen/ui/profile/profile/profile_view.dart';
+import 'package:ets_driver/screen/ui/wallet/wallet_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 class NavigationBarViewModel extends BaseViewModel {
-  List<String> _navbarIconString = [
+  final List<String> _navbarIconString = [
     'assets/navbar/Vector (12).svg',
     'assets/navbar/Vector (13).svg',
     'assets/navbar/Vector (14).svg',
-    'assets/navbar/Vector (14).svg',
+   
     'assets/navbar/Vector (15).svg',
+    'assets/navbar/Vector.svg'
   ];
 
-  List<String> _navbarText = [
+  final List<String> _navbarText = [
     'Home',
     'Bookings',
     'Inbox',
     'Wallet',
     'Profile',
   ];
-  List<Widget> _widgetList = [
-    UberFrontPage(),
-    BookingView(),
-    InboxView(),
-    ProfileWidget(),
-    ProfileWidget(),
+  final List<Widget> _widgetList = [
+     MyHomePage(),
+    const BookingView(),
+    const InboxView(),
+   
+    const WalletView(),
+     const ProfileView(),
   ];
 
   List<Widget> get widgetList => _widgetList;

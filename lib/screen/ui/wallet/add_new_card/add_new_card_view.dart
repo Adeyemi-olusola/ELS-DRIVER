@@ -1,6 +1,6 @@
-import 'package:ets_rider/screen/ui/wallet/add_new_card/add_new_card_model.dart';
-import 'package:ets_rider/screen/widgets/button/button.dart';
-import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
+import 'package:ets_driver/screen/ui/wallet/add_new_card/add_new_card_model.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
+import 'package:ets_driver/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -26,13 +26,13 @@ class _AddNewCardViewState extends State<AddNewCardView> {
                     InlineInput(
                       label: 'CardHolder Name',
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     InlineInput(
                       label: 'CardHolder Name',
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(
@@ -42,7 +42,7 @@ class _AddNewCardViewState extends State<AddNewCardView> {
                             label: 'CardHolder Name',
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 40,
                         ),
                         Expanded(
@@ -52,10 +52,10 @@ class _AddNewCardViewState extends State<AddNewCardView> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 50,
                     ),
-                    MyButton(text: 'Fund Wallet')
+                    const MyButton(text: 'Fund Wallet')
                   ],
                 ),
               ),

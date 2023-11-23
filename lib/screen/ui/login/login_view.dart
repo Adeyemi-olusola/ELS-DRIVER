@@ -1,11 +1,9 @@
-import 'package:ets_rider/screen/ui/forgot_password/forgot_password_view.dart';
-import 'package:ets_rider/screen/ui/forgot_password/forgot_password_view_model.dart';
-import 'package:ets_rider/screen/ui/navbar/navbar_view.dart';
-import 'package:ets_rider/screen/widgets/button/button.dart';
-import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
+import 'package:ets_driver/screen/ui/forgot_password/forgot_password_view.dart';
+import 'package:ets_driver/screen/ui/navbar/navbar_view.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
+import 'package:ets_driver/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 //import 'package:truman_staff/utils/tools.dart' as tools;
 
@@ -136,12 +134,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Row(
+                                    const Row(
                                       children: [],
                                     ),
                                     InkWell(
                                       onTap: () {
-                                        Get.to(ForgotPasswordView());
+                                        Get.to(const ForgotPasswordView());
                                       },
                                       child: Text('Forgot Password ?',
                                           style: Theme.of(context)
@@ -159,7 +157,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   MyButton(
                                     text: 'Login',
                                     onPressed: () async {
-                                      Get.to(NavBarView());
+                                      Get.to(const NavBarView());
                                     },
                                   ),
                                 ],
@@ -182,7 +180,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         textAlign: TextAlign.center,
                                         text: TextSpan(
                                           children: <TextSpan>[
-                                            TextSpan(
+                                            const TextSpan(
                                               text: 'Don’t have account? ',
                                             ),
                                             TextSpan(

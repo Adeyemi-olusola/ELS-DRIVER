@@ -1,23 +1,24 @@
-import 'package:ets_rider/screen/ui/transaction/transaction_history/transaction_history_view_model.dart';
-import 'package:ets_rider/screen/ui/wallet/wallet_view_model.dart';
+import 'package:ets_driver/screen/ui/transaction/transaction_history/transaction_history_view_model.dart';
+import 'package:ets_driver/screen/widgets/appbar/appBar_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stacked/stacked.dart';
 
-class TransactionView extends StatefulWidget {
-  const TransactionView({super.key});
+class TransactionHistoryView extends StatefulWidget {
+  const TransactionHistoryView({super.key});
 
   @override
-  State<TransactionView> createState() => _TransactionViewState();
+  State<TransactionHistoryView> createState() => _TransactionHistoryViewState();
 }
 
-class _TransactionViewState extends State<TransactionView> {
+class _TransactionHistoryViewState extends State<TransactionHistoryView> {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
         viewModelBuilder: () => TransactionViewModel(),
         builder: (context, viewModel, child) {
           return Scaffold(
+                        appBar: CustomAppBar(title: 'Transaction History' , showBackButton: true,),
+
             body: SingleChildScrollView(
               child: SafeArea(
                 child: Padding(
@@ -26,7 +27,7 @@ class _TransactionViewState extends State<TransactionView> {
                     children: [
                       ListView.separated(
                           itemCount: 10,
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           separatorBuilder: (context, index) {
                             return Container(
@@ -34,7 +35,7 @@ class _TransactionViewState extends State<TransactionView> {
                             );
                           },
                           itemBuilder: (context, index) {
-                            return Container(
+                            return SizedBox(
                               height: 50,
                               child: Row(
                                 children: [
@@ -46,7 +47,7 @@ class _TransactionViewState extends State<TransactionView> {
                                         borderRadius:
                                             BorderRadius.circular(2000)),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 13,
                                   ),
                                   Expanded(
@@ -87,7 +88,7 @@ class _TransactionViewState extends State<TransactionView> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              'Daniel Austin',
+                                              'Dec 20,2024 |10:00AM',
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .bodySmall!
@@ -98,14 +99,15 @@ class _TransactionViewState extends State<TransactionView> {
                                                       color: Colors.grey),
                                             ),
                                             Text(
-                                              '13:29',
+                                              'Payment',
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .bodySmall!
-                                                  .copyWith(
+                                                 .copyWith(
                                                       fontWeight:
                                                           FontWeight.w500,
-                                                      fontSize: 16),
+                                                      fontSize: 14,
+                                                      color: Colors.grey),
                                             ),
                                           ],
                                         ),
@@ -138,7 +140,7 @@ class WalletWidget extends StatelessWidget {
             body: ListView.separated(
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  return Container(
+                  return SizedBox(
                     height: 50,
                     child: Row(
                       children: [
@@ -149,7 +151,7 @@ class WalletWidget extends StatelessWidget {
                               color: Colors.red,
                               borderRadius: BorderRadius.circular(2000)),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 13,
                         ),
                         Expanded(

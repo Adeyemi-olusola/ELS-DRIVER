@@ -1,10 +1,7 @@
-import 'package:ets_rider/screen/ui/login/login_view.dart';
-import 'package:ets_rider/screen/ui/signUp/create_accountForm_view.dart';
-import 'package:ets_rider/screen/ui/signUp/sigup_view_model.dart';
-import 'package:ets_rider/screen/widgets/button/button.dart';
-import 'package:ets_rider/screen/widgets/dialog/dialog.dart';
-import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
-import 'package:ets_rider/screen/widgets/upload_file_widget/uplload_image.dart';
+import 'package:ets_driver/screen/ui/login/login_view.dart';
+import 'package:ets_driver/screen/ui/signUp/create_accountForm_view.dart';
+import 'package:ets_driver/screen/ui/signUp/sigup_view_model.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -47,13 +44,13 @@ class _GetInViewState extends State<GetInView> {
                               style: Theme.of(context).textTheme.displayLarge!),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width - 50,
                             child: Text(
                                 'The Uber luxury mobile app is a high-end, premium transportation service designed to cater to a client seeking the ultimate luxury and convenience in their experiences',
@@ -69,15 +66,15 @@ class _GetInViewState extends State<GetInView> {
                       MyButton(
                           text: 'SignUp',
                           onPressed: () {
-                            Get.to(CreateAccountFormView());
+                            Get.to(const CreateAccountFormView());
                           }),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       WhiteButton(
                           text: 'Login',
                           onPressed: () {
-                            Get.to(LoginWidget());
+                            Get.to(const LoginWidget());
                           })
                     ],
                   ),

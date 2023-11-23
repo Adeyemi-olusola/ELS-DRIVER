@@ -1,4 +1,4 @@
-import 'package:ets_rider/screen/ui/chat/chat_list/chat_view_model.dart';
+import 'package:ets_driver/screen/ui/chat/chat_list/chat_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -19,7 +19,7 @@ class _CallListViewState extends State<CallListView> {
             body: ListView.separated(
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  return Container(
+                  return SizedBox(
                     height: 50,
                     child: Row(
                       children: [
@@ -27,10 +27,10 @@ class _CallListViewState extends State<CallListView> {
                           height: 50,
                           width: 50,
                           decoration: BoxDecoration(
-                            color: Colors.red,
+                              color: Colors.red,
                               borderRadius: BorderRadius.circular(2000)),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 13,
                         ),
                         Expanded(
@@ -40,7 +40,7 @@ class _CallListViewState extends State<CallListView> {
                               Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     'Daniel Austin',
@@ -52,25 +52,31 @@ class _CallListViewState extends State<CallListView> {
                                             fontSize: 16),
                                   ),
                                   Container(
-                                    child: Text(
-                                      '13',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodySmall!
-                                          .copyWith(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 14),
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.phone_missed_outlined , color: Colors.red, size: 13,),
+                                        Text(
+                                          ' Incoming | Dec 19,2024',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall!
+                                              .copyWith(
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 14),
+                                        ),
+                                      ],
                                     ),
                                   )
                                 ],
                               ),
-                              Row(
+                              const Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Icon(Icons.call ,color: Colors.white,)
-                                
-                                 
+                                  Icon(
+                                    Icons.call_outlined,
+                                    
+                                  )
                                 ],
                               ),
                             ],

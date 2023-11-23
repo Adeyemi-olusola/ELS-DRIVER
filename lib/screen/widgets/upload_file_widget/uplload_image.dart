@@ -16,7 +16,7 @@ class _UploadImageWidgetState extends State<UploadImageWidget> {
           color: Theme.of(context).primaryColor,
           strokeWidth: 1,
           dashPattern: const <double>[9, 9],
-          radius: Radius.circular(10),
+          radius: const Radius.circular(10),
           child: Container(
             decoration: BoxDecoration(color: Theme.of(context).cardColor),
             width: MediaQuery.of(context).size.width,
@@ -29,7 +29,7 @@ class _UploadImageWidgetState extends State<UploadImageWidget> {
                   Icons.file_copy,
                   color: Theme.of(context).primaryColor,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Text(

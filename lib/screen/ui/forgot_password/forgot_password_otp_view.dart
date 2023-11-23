@@ -1,10 +1,9 @@
-import 'package:ets_rider/screen/ui/forgot_password/create_new_password_view.dart';
-import 'package:ets_rider/screen/ui/forgot_password/forgot_password_view_model.dart';
-import 'package:ets_rider/screen/widgets/button/button.dart';
-import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
+import 'package:ets_driver/screen/ui/forgot_password/create_new_password_view.dart';
+import 'package:ets_driver/screen/ui/forgot_password/forgot_password_view_model.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
+import 'package:ets_driver/screen/widgets/input/underlineInput.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:stacked/stacked.dart';
 
 //import 'package:truman_staff/utils/tools.dart' as tools;
@@ -98,7 +97,7 @@ class _FogotPasswordOtpViewState extends State<FogotPasswordOtpView> {
                                   ),
                                   Text(
                                     '${viewModel.seconds} seconds',
-                                    style: TextStyle(fontSize: 24),
+                                    style: const TextStyle(fontSize: 24),
                                   ),
                                   const SizedBox(
                                     height: 10,
@@ -111,7 +110,7 @@ class _FogotPasswordOtpViewState extends State<FogotPasswordOtpView> {
                                       MyButton(
                                         text: 'Verify Account',
                                         onPressed: () async {
-                                          Get.to(CreateNewPasswordView());
+                                          Get.to(const CreateNewPasswordView());
                                         },
                                       ),
                                     ],

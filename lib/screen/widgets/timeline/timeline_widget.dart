@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
 class TimelineItem extends StatelessWidget {
+
+  const TimelineItem(
+      {super.key, required this.title,
+      required this.subTitle,
+      required this.time,
+      required this.icon,
+      this.isFirst = false,
+      this.isLast = false,
+      this.showEditIcon = false});
   final String title;
   final String subTitle;
   final String time;
@@ -8,15 +17,6 @@ class TimelineItem extends StatelessWidget {
   final bool isFirst;
   final bool isLast;
   final bool showEditIcon;
-
-  TimelineItem(
-      {required this.title,
-      required this.subTitle,
-      required this.time,
-      required this.icon,
-      this.isFirst = false,
-      this.isLast = false,
-      this.showEditIcon = false});
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +34,9 @@ class TimelineItem extends StatelessWidget {
           Column(
             children: [
               if (!isFirst)
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: SizedBox(
                     width: 2.0,
                     height: 20.0,
                     child: VerticalDivider(
@@ -51,7 +51,7 @@ class TimelineItem extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(3000),
-                      color: Color(0xff574928)),
+                      color: const Color(0xff574928)),
                   child: Center(
                       child: Container(
                     height: 30,
@@ -63,7 +63,7 @@ class TimelineItem extends StatelessWidget {
                   ))),
             ],
           ),
-          SizedBox(width: 30.0),
+          const SizedBox(width: 30.0),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(bottom: 7),
@@ -77,7 +77,7 @@ class TimelineItem extends StatelessWidget {
                       Text(title,
                           style: Theme.of(context).textTheme.bodySmall!.copyWith(
                               fontSize: 16, fontWeight: FontWeight.w600)),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(subTitle,

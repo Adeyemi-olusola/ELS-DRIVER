@@ -1,8 +1,7 @@
-import 'package:ets_rider/screen/ui/signUp/sigup_view_model.dart';
-import 'package:ets_rider/screen/widgets/button/button.dart';
-import 'package:ets_rider/screen/widgets/dialog/dialog.dart';
-import 'package:ets_rider/screen/widgets/input/underlineInput.dart';
-import 'package:ets_rider/screen/widgets/upload_file_widget/uplload_image.dart';
+import 'package:ets_driver/screen/ui/signUp/sigup_view_model.dart';
+import 'package:ets_driver/screen/widgets/button/button.dart';
+import 'package:ets_driver/screen/widgets/dialog/dialog.dart';
+import 'package:ets_driver/screen/widgets/upload_file_widget/uplload_image.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -36,13 +35,13 @@ class _UploadProfilePictureViewState extends State<UploadProfilePictureView> {
                           style: Theme.of(context).textTheme.displayLarge!),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width - 50,
                         child: Text(
                             'Please upload a clear picture of yourself, with high-resolution images',
@@ -51,11 +50,11 @@ class _UploadProfilePictureViewState extends State<UploadProfilePictureView> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
-                  Container(height: 50, child: UploadImageWidget()),
-                  SizedBox(
+                  const SizedBox(height: 50, child: UploadImageWidget()),
+                  const SizedBox(
                     height: 40,
                   ),
                   MyButton(

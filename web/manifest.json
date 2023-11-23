@@ -1,6 +1,6 @@
 {
-    "name": "ets_rider",
-    "short_name": "ets_rider",
+    "name": "ets_driver",
+    "short_name": "ets_driver",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
